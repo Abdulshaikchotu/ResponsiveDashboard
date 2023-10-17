@@ -1,0 +1,296 @@
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  scroll-behavior: smooth;
+}
+.sidebar {
+  background: darkblue;
+  color: white;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  margin: 0px;
+  flex-direction: column;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  /* margin-top: -100%; */
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar li:hover{
+  border: 2px solid;
+  padding: 5px;
+}
+.sidebar li > svg {
+  margin-right: 10px;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.user p {
+  margin-bottom: 10px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  position: relative;
+}
+
+.search input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+}
+
+.search label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translate(0, -50%);
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #888; /* Adjust the color as needed */
+  pointer-events: none; /* Prevent clicking on the label */
+}
+
+
+.search::before {
+  content: "";
+  background: url('./images/searchicon.png') no-repeat;
+  background-size: 20px 20px; /* Adjust the size as needed */
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0px; /* Adjust the positioning as needed */
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.search svg {
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+/* .content {
+  flex: 1;
+  padding: 20px;
+} */
+
+.header h2 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.header select {
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.userinfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+ border: 2px solid black;
+ width: 100%;
+ padding:5px;
+  margin-top: 250%;
+}
+
+.maincards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.card {
+  border-radius: 5px;
+  width: calc(25% - 20px);
+  margin-bottom: 15px;
+  /* padding: 10px; */
+  box-sizing: border-box;
+}
+
+.img-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-large {
+  width: 68%;
+}
+
+.img-small {
+  width: 28%;
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  margin-top: 4%;
+}
+
+table, th, td {
+  border: none;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background:wheat;
+  color: white;
+}
+
+.tablehead{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+   gap: 2%;
+}
+
+
+
+/* Use a media query for screens with a maximum width of 767px (tablet and mobile) */
+@media screen and (max-width: 767px) {
+  /* Reset the sidebar width for smaller screens */
+  .sidebar {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(orangered,rgb(209, 209, 103),blue);
+
+  }
+
+  /* sidebar list should be changed to center for mobile view*/
+  .sidebar li{
+    gap: 2px;
+    justify-content: center;
+  }
+
+  /* Adjust the header style */
+  .header h2 {
+    font-size: 20px;
+  }
+
+  /* Adjust the user info section for smaller screens */
+  .userinfo {
+    margin-top: 10px;
+  }
+
+  /* Adjust footer layout for smaller screens */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust the select input for smaller screens */
+  .header select {
+    margin: 10px 0;
+  }
+
+  /* Adjust main card layout for smaller screens */
+  .maincards {
+    flex-direction: column;
+  }
+
+  /* Center-align search input */
+  .search {
+    text-align: center;
+  }
+  
+  .search label{
+    visibility: hidden;
+  }
+  .search input[type="text"] {
+    width: 100%;
+    border-bottom: 2px solid orangered;
+  }
+
+  /* for userinfo*/
+  .userinfo{
+    width: fit-content;
+    border: none;
+  }
+  /* for image section*/
+  .img-section{
+    width: fit-content;
+  }
+
+ 
+  /* for table */
+  table{
+    width: fit-content;
+  }
+
+  .tablehead{
+    width: fit-content;
+  }
+  /* Change .app flex direction to row for mobile view */
+  .app {
+    flex-direction: column;
+    justify-content: center;
+    font-size: large;
+    font-family: cursive;
+    width: fit-content;
+  }
+}
+
+
+
+
